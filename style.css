@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background: url(../bg.jpg);
+    background: url(/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -18,6 +18,7 @@ header h1{
 }
 
 .fDiv{
+    /* display: inline-block; */
     border: 1px solid black;
     width: 30%;
     height: 50vh;
@@ -29,6 +30,18 @@ header h1{
     padding: 60px;
 }
 
+.fDiv form label{
+    padding: 100px;
+    margin-bottom: 20px;
+}
+
+.fDiv form button{
+    background-color: #e12e5b;
+    border: none;
+    width: 90%;
+    height: 12vh;
+}
+
 .fDiv form input{
     width: 40vh;
     border-radius: 5%;
@@ -37,9 +50,11 @@ header h1{
 }
 
 .sDiv{
+    /* display: inline-block; */
     float: left;
-    padding-left: 20px;
+    padding-left: 200px;
     background-color: #633f3f61;
+    text-align: center;
 }
 
 .sDiv table tr,td{
