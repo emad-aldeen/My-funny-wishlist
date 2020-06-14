@@ -22,6 +22,7 @@ header h1{
     width: 30%;
     height: 50vh;
     float: left;
+    background-color: #633f3f61;
 }
 
 .fDiv form {
@@ -37,6 +38,26 @@ header h1{
 
 .sDiv{
     float: left;
-    
+    padding-left: 20px;
+    background-color: #633f3f61;
 }
 
+.sDiv table tr,td{
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.mainTr{
+    background-color: #e12e5b;
+}
+
+table button{
+    width: 20px;
+    height: 20px;
+    background-color: #e12e5b;
+    text-align: center;
+    color: white;
+}

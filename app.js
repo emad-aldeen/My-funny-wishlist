@@ -57,15 +57,17 @@ function render(){
         td3.textContent = `${wishesAll[i].comeTrue}years`;
         mTr.appendChild(td3);
         var td4 = document.createElement('td');
-        td4.textContent = `X`;
-        td4.id = i;
+        var buton = document.createElement('button');
+        buton.textContent = `X`;
+        buton.id = i;
+        td4.appendChild(buton);
         mTr.appendChild(td4);
         table.appendChild(mTr);
     }
 }
 
 function clean(){
-    table.innerHTML = `<tr>
+    table.innerHTML = `<tr  class="mainTr">
     <td>Wish Title</td>
     <td>Expected Date</td>
     <td>Your Wish will Come True After XD</td>
