@@ -9,7 +9,7 @@ function Wishes(name, date, Ctrue){
     this.comeTrue = Ctrue;
     wishesAll.push(this)
 }
-
+get();
 var forma = document.querySelector('#forma');
 
 forma.addEventListener('submit', (event)=>{
@@ -21,6 +21,7 @@ forma.addEventListener('submit', (event)=>{
         new Wishes(inptedName, inputedDate, comeTrue);
         clean();
         render();
+        set();
         console.log(wishesAll);
     } else {
         alert(`please fill all the inputs!!`);
@@ -80,6 +81,7 @@ table.addEventListener('click', (event)=>{
         var delteId = event.target.id;
         wishesAll.splice(delteId, 1);
         console.log(wishesAll);
+        set();
         clean();
         render();
     }
@@ -87,4 +89,16 @@ table.addEventListener('click', (event)=>{
 
 function randomNumberBetween(min,max){ //Helper function..
     return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function set(){
+    var cc = JSON.stringify(wishesAll);
+    localStorage.setItem('WishList', cc);
+}
+
+function get(){
+    var dd = localStorage.getItem('WishList');
+    if(dd){
+        wishesAll = JSON.parse(dd);
+    }
 }
