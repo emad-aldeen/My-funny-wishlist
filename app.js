@@ -45,25 +45,27 @@ function render(){
     // ntd4.textContent = `Remove`;
     // namesTr.appendChild(ntd4);
     // table.appendChild(namesTr);
+    if(wishesAll){
+        for(var i =0; i < wishesAll.length; i++){
+            var mTr = document.createElement('tr');
+            var td1 = document.createElement('td');
+            td1.textContent = wishesAll[i].name;
+            mTr.appendChild(td1);
+            var td2 = document.createElement('td');
+            td2.textContent = wishesAll[i].date;
+            mTr.appendChild(td2);
+            var td3 = document.createElement('td');
+            td3.textContent = `${wishesAll[i].comeTrue}years`;
+            mTr.appendChild(td3);
+            var td4 = document.createElement('td');
+            var buton = document.createElement('button');
+            buton.textContent = `X`;
+            buton.id = i;
+            td4.appendChild(buton);
+            mTr.appendChild(td4);
+            table.appendChild(mTr);
+        }
 
-    for(var i =0; i < wishesAll.length; i++){
-        var mTr = document.createElement('tr');
-        var td1 = document.createElement('td');
-        td1.textContent = wishesAll[i].name;
-        mTr.appendChild(td1);
-        var td2 = document.createElement('td');
-        td2.textContent = wishesAll[i].date;
-        mTr.appendChild(td2);
-        var td3 = document.createElement('td');
-        td3.textContent = `${wishesAll[i].comeTrue}years`;
-        mTr.appendChild(td3);
-        var td4 = document.createElement('td');
-        var buton = document.createElement('button');
-        buton.textContent = `X`;
-        buton.id = i;
-        td4.appendChild(buton);
-        mTr.appendChild(td4);
-        table.appendChild(mTr);
     }
 }
 
@@ -81,9 +83,9 @@ table.addEventListener('click', (event)=>{
         var delteId = event.target.id;
         wishesAll.splice(delteId, 1);
         console.log(wishesAll);
-        set();
         clean();
         render();
+        set();
     }
 })
 
@@ -102,3 +104,4 @@ function get(){
         wishesAll = JSON.parse(dd);
     }
 }
+render();
