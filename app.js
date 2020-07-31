@@ -14,15 +14,16 @@ var forma = document.querySelector('#forma');
 
 forma.addEventListener('submit', (event)=>{
     event.preventDefault();
+    // console.log(event)
     var inptedName = event.target[0].value;
     var inputedDate = event.target[1].value;
-    if(inptedName !== '' || inputedDate !== ''){
+    if(inptedName !== '' && inputedDate !== ''){
         var comeTrue = randomNumberBetween(1, 99);
         new Wishes(inptedName, inputedDate, comeTrue);
         clean();
         render();
         set();
-        console.log(wishesAll);
+        // console.log(wishesAll);
     } else {
         alert(`please fill all the inputs!!`);
     }
@@ -46,6 +47,7 @@ function render(){
     // namesTr.appendChild(ntd4);
     // table.appendChild(namesTr);
     if(wishesAll){
+        clean();
         for(var i =0; i < wishesAll.length; i++){
             var mTr = document.createElement('tr');
             var td1 = document.createElement('td');
@@ -70,13 +72,27 @@ function render(){
 }
 
 function clean(){
-    table.innerHTML = `<tr  class="mainTr">
-    <td>Wish Title</td>
-    <td>Expected Date</td>
-    <td>Your Wish will Come True After XD</td>
-    <td>Remove</td>
-</tr>`;
+    if(wishesAll.length != 0){
+        table.innerHTML = `<tr  class="mainTr">
+        <td>Wish Title</td>
+        <td>Expected Date</td>
+        <td>Your Wish will Come True After XD</td>
+        <td>Remove</td>
+    </tr>`;
+    }else{
+        table.innerHTML = `<tr  class="mainTr">
+        <td>Wish Title</td>
+        <td>Expected Date</td>
+        <td>Your Wish will Come True After XD</td>
+        <td>Remove</td>
+    </tr>
+    <tr>
+        <td colspan="4">No items yet :(</td>
+    </tr>`;
+    }
 }
+
+
 
 table.addEventListener('click', (event)=>{
     if(event.target.textContent == 'X'){

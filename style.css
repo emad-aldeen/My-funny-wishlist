@@ -8,7 +8,7 @@ body{
 }
 
 header h1{
-    margin-top: -5px;
+    margin-top: -8px;
     padding-top: 20px;
     height: 65px;
     font-size: 35px;
@@ -18,28 +18,39 @@ header h1{
 }
 
 .fDiv{
-    /* display: inline-block; */
+    position: absolute;
+    top: 30%;
+    left: 7%;
     border: 1px solid black;
     width: 30%;
     height: 50vh;
-    float: left;
     background-color: #633f3f61;
+
 }
 
 .fDiv form {
-    padding: 60px;
+    position: relative;
+    top: 10%;
+    left: 4%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
 }
 
 .fDiv form label{
-    /* padding: 100px; */
-    /* margin-bottom: 20px; */
+    font-weight: 500;
 }
 
 .fDiv form button{
     background-color: #e12e5b;
     border: none;
+    font-size: 20px;
+    font-weight: 900;
     width: 90%;
     height: 12vh;
+    margin-top: 50px;
+    margin-left: -5%;
+    cursor: pointer;
 }
 
 .fDiv form input{
@@ -50,11 +61,12 @@ header h1{
 }
 
 .sDiv{
-    /* display: inline-block; */
-    float: left;
-    padding-left: 200px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
     background-color: #633f3f61;
     text-align: center;
+    min-height: 50%;
 }
 
 .sDiv table tr,td{
@@ -62,17 +74,14 @@ header h1{
     color: white;
     padding: 5px;
     text-align: center;
-
 }
 
 .mainTr{
     background-color: #e12e5b;
 }
 
-table button{
-    width: 20px;
+.sDiv table button{
     height: 20px;
     background-color: #e12e5b;
-    text-align: center;
     color: white;
 }
